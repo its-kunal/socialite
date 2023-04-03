@@ -1,5 +1,5 @@
 /*
-Route - api/login
+Route - api/signup
 */
 
 
@@ -7,7 +7,6 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { dbConnect } from "../../../lib/mongodb";
 import { IUser } from "../../../models/userInterface";
 import userModel from "../../../models/user"
-import bcrypt from "bcrypt"
 
 export default async function Handler(req: NextApiRequest, res: NextApiResponse) {
     await dbConnect()
@@ -16,23 +15,12 @@ export default async function Handler(req: NextApiRequest, res: NextApiResponse)
         })
     switch (req.method) {
         case "POST":
-            req.body = JSON.parse(req.body) as { username: string, password: string }
+            req.body = JSON.parse(req.body) as IUser
             try {
-                let primeUsers: any = await userModel.find({ username: req.body.username })
-                if (primeUsers.length == 0) {
-                    res.status(400).json({ "message": "Sorry no users found with given credentials." })
-                }
-                primeUsers = primeUsers[0]
-                bcrypt.compare(req.body.password, primeUsers.password, function (err, result) {
-                    if (result === false) {
-                        res.status(400).json({ "message": "Enter Correct Credentials" })
-                    }
-                })
-
-
+                await userModel.create(req.body)
             }
             catch (err) {
-                res.status(400).json({ "message": "Unknown Error Occured" })
+                res.status(400).json({ "message": "Cannot create User with given credential, try selecting different username / mailid." })
             }
             res.status(200)
             break
