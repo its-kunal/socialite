@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from "next/router"
-import Layout from "@/components/Layout"
+import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/Navbar'
 import BottomNavigation from '@/components/BottomNavigation'
@@ -10,29 +10,29 @@ import SignInForm from '@/components/SignInForm'
 import { useEffect } from 'react'
 import { useApplicationContext } from '@/services/Application'
 import Spinner from '@/components/Spinner'
-import MetaDetails from '@/components/MetaDetails'
+import Layout from '@/components/Layout'
+
+const inter = Inter({ subsets: ['latin'] })
 
 
 
 function Home() {
-  const { user, isLoading } = useApplicationContext()
+    const { user, isLoading } = useApplicationContext()
+    const router = useRouter()
+    useEffect(() => {
+        if (user) {
+            router.push("/home")
+        }
+    }, [user])
 
-  const router = useRouter()
-  useEffect(() => {
-    if (user) {
-      router.push("/home")
-    } else {
-      router.push("/signup")
-    }
-  }, [user])
-  
-  return (
-    <>
-      <MetaDetails />
-      <Layout>
-      </Layout>
-    </>
-  )
+    return (
+        <>
+            <Layout>
+                <SignInForm />
+            </Layout>
+
+        </>
+    )
 }
 
 

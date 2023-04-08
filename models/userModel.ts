@@ -8,7 +8,9 @@ export const userSchema = new Schema<IUser>({
     name: { type: String, required: true },
     password: { type: String, required: true },
     username: { type: String, unique: true, required: true },
-    interests: { type: [String] }
+    interests: { type: [String] },
+    followers: { type: [String] },
+    following: { type: [String] }
 })
 
 userSchema.pre(["save"], async function (next) {

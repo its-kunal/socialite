@@ -12,5 +12,5 @@ export interface postInterface {
         value: string,
         owner: string // user id
     }],
-    interest: [string]
+    interests: [string]
 }

@@ -1,6 +1,10 @@
-export interface IUser {
+export interface IUser extends UserCredentials {
     name: string,
-    password: string,
+    interests: string[],
+    followers: string[],
+    following: string[]
+}
+export interface UserCredentials {
     username: string,
-    interests: string[]
+    password: string
 }

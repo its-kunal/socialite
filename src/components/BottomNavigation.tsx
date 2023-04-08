@@ -1,3 +1,4 @@
+import Link from "next/link"
 
 export default function BottomNavigation() {
 
@@ -6,15 +7,12 @@ export default function BottomNavigation() {
             <div className="mx-auto px-4 max-w-4xl sm:px-6 lg:px-8">
                 <div className="flex justify-between h-14">
                     <div className="flex space-x-4">
-                        <a href="#" className="flex items-center justify-center w-full px-2 py-2 text-sm font-medium text-gray-500 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <Link href="/home" className="flex items-center justify-center w-full px-2 py-2 text-sm font-medium text-gray-500 bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Home
-                        </a>
-                        <a href="#" className="flex items-center justify-center w-full px-2 py-2 text-sm font-medium text-gray-500 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Dashboard
-                        </a>
-                        <a href="#" className="flex items-center justify-center w-full px-2 py-2 text-sm font-medium text-gray-500 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Settings
-                        </a>
+                        </Link>
+                        <Link href="/profile" className="flex items-center justify-center w-full px-2 py-2 text-sm font-medium text-gray-500 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Profile
+                        </Link>
                     </div>
                     <div className="flex items-center">
                         <a href="#" className="flex-shrink-0 p-3 rounded-full text-gray-400 hover:text-gray-500">

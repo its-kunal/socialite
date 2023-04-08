@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction 
 import mongoose from 'mongoose'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import userModel from "../../../models/user"
+import userModel from "../../../models/userModel"
 import { dbConnect } from '../../../lib/mongodb'
 import { v4 } from "uuid"
 
