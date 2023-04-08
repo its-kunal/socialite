@@ -46,5 +46,8 @@
 - Edit Profile Page, delete account section  ✅
 - Modal to edit profile
 
+### Demo video link
 
+[Desktop View](https://drive.google.com/file/d/18VDGh6CPZAsxckQGwPYswhOz2NFZnJFk/view?usp=share_link)
 
+[Mobile View](https://drive.google.com/file/d/14UsI-uw3CXyILfEf9E9L-4JXZytrHfe6/view?usp=share_link)
