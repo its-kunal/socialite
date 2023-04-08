@@ -11,12 +11,14 @@
 
 ### Services
 - Firebase storage service
-- Mongo Atlas service 
+- MongoDB Atlas service 
+
 ---
 
 ### What is done till now?
 
-- Authentication is done ✅
+- Authentication ✅
+- Routing
 
 ### What to do next?
 
